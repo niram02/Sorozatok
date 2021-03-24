@@ -24,20 +24,8 @@ export default class Content {
         const params = new url.URL(req.url as string, `http://${req.headers.host}/`).searchParams;
 
         // Kezd a kódolást innen -->
-
-        res.write("Egyszerű Hello World!!!!!!!\n");
-
-        // Tetszőleges html teg-ek és attribútumok beépítése:
-        res.write("<span style='color: blue;'><i>Színes és dőlt Hello World!'</i></span>\n");
-
-        // Próbáljuk számra konvertálni a "kor" paraméter (http://localhost:8080/?kor=16) értékét:
-        let korod = parseInt(params.get("kor") as string);
-        // Ha nincs "kor" paraméter megadva, vagy nem lehet számra konvertálni értékét,
-        // akkor a "korod" változóba NaN érték kerül, ilyenkor legyen 18 év az értéke:
-        if (isNaN(korod)) korod = 18;
-
-        res.write(`Kérem a korod: <input type='number' name='kor' value=${korod} style='max-width:100px;' onChange='this.form.submit();'>\n`);
-        res.write(`Te ${korod} éves vagy!\n`);
+        
+        
 
         // <---- Fejezd be a kódolást
 
