@@ -46,7 +46,7 @@ export default class Content {
       return;
     }
 
-    res.write(`Kiiratás${m.Musorokszama}`);
+    res.write(`Összes műsor: ${m.osszesmusor}`);
 
     // <---- Fejezd be a kódolást
 

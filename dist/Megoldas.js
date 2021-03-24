@@ -17,6 +17,15 @@ class Megoldas {
     get Musorokszama() {
         return this._Musorok.length;
     }
+    get osszesmusor() {
+        let musorok = "";
+        this._Musorok.forEach((element) => {
+            musorok += element.radiosorszam + " ";
+            musorok += element.szamhossz + " ";
+            musorok += element.azonosito + "\n";
+        });
+        return musorok;
+    }
 }
 exports.default = Megoldas;
 //# sourceMappingURL=Megoldas.js.map

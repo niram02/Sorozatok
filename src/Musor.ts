@@ -4,6 +4,16 @@ export default class Musor {
   private _szamhossz: number[] = [];
   private _azonosito: string[] = [];
 
+  public get radiosorszam() {
+    return this._radiosorszam;
+  }
+  public get szamhossz() {
+    return this._szamhossz;
+  }
+  public get azonosito() {
+    return this._azonosito;
+  }
+
   //Konstruktor
   public constructor(sor: string) {
     const m: string[] = sor.split(" ");

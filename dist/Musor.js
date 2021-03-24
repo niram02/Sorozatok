@@ -17,6 +17,15 @@ class Musor {
         this._azonosito[0] = azonosito[0];
         this._azonosito[1] = azonosito[1];
     }
+    get radiosorszam() {
+        return this._radiosorszam;
+    }
+    get szamhossz() {
+        return this._szamhossz;
+    }
+    get azonosito() {
+        return this._azonosito;
+    }
 }
 exports.default = Musor;
 //# sourceMappingURL=Musor.js.map
