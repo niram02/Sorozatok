@@ -3,6 +3,9 @@ import fs from "fs";
 export default class Megoldas {
     //Privát adattagok
     private _Musorok: Musor[] = [];
+    public get Musorokszama(){
+        return this._Musorok.length;
+    }
     //Konstruktor
     public constructor(forras: string) {
         const sorok: string[] = fs.readFileSync(forras).toString().split("\n");

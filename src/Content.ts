@@ -1,6 +1,7 @@
 ﻿import fs from "fs";
 import http from "http";
 import url from "url";
+import Megoldas from "./Megoldas";
 
 export default class Content {
     public static content(req: http.IncomingMessage, res: http.ServerResponse): void {
@@ -25,7 +26,19 @@ export default class Content {
 
         // Kezd a kódolást innen -->
         
-        
+        let m: Megoldas;
+        try {
+            m = new Megoldas("musor.txt");
+        } catch (error) {
+            res.write("Hiba a fájl beolvasásakor!\n");
+            res.write(`Hibaüzenet: ${(error as Error).message}\n`);
+            res.write("</pre></form>");
+            res.write("</body></html>");
+            res.end();
+            return;
+        }
+
+        res.write(`Kiiratás${m.Musorokszama}`);
 
         // <---- Fejezd be a kódolást
 
