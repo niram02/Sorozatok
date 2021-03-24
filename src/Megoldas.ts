@@ -1,21 +1,21 @@
 import Musor from "./Musor";
 import fs from "fs";
 export default class Megoldas {
-    //Privát adattagok
-    private _Musorok: Musor[] = [];
-    public get Musorokszama(){
-        return this._Musorok.length;
+  //Privát adattagok
+  private _Musorok: Musor[] = [];
+  public get Musorokszama() {
+    return this._Musorok.length;
+  }
+  //Konstruktor
+  public constructor(forras: string) {
+    const sorok: string[] = fs.readFileSync(forras).toString().split("\n");
+    for (let index = 0; index < sorok.length; index++) {
+      const aktSor: string = sorok[index].trim();
+      if (aktSor.length != 0) {
+        this._Musorok.push(new Musor(aktSor));
+      }
     }
-    //Konstruktor
-    public constructor(forras: string) {
-        const sorok: string[] = fs.readFileSync(forras).toString().split("\n");
-        for (let index = 0; index < sorok.length; index++) {
-            const aktSor: string = sorok[index].trim();
-            if (aktSor.length != 0) {
-                this._Musorok.push(new Musor(aktSor));
-            }
-        }
-    }
+  }
 
-    //Metódusok
+  //Metódusok
 }
