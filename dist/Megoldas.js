@@ -7,7 +7,7 @@ class Megoldas {
     constructor(forras) {
         this._Musorok = [];
         const sorok = fs_1.default.readFileSync(forras).toString().split("\n");
-        for (let index = 0; index < sorok.length; index++) {
+        for (let index = 1; index < sorok.length; index++) {
             const aktSor = sorok[index].trim();
             if (aktSor.length != 0) {
                 this._Musorok.push(new Musor_1.default(aktSor));

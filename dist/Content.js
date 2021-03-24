@@ -34,7 +34,7 @@ class Content {
             res.end();
             return;
         }
-        res.write(`Összes műsor: ${m.osszesmusor}`);
+        res.write(`Összes műsor: ${m.Musorokszama}\n${m.osszesmusor}`);
         res.write("</pre></form>");
         res.write("</body></html>");
         res.end();
